@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>MVCProject</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+	<!-- controller 서블릿 매핑 처리 -->
+	<!-- web.xml은 web-inf밑에 위치해야함. lib안에 넣었더니 실행안됨 -->	
+  <servlet>
+  	<servlet-name>FrontController</servlet-name>
+  	<servlet-class>com.controller.action.FrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FrontController</servlet-name>
+  	<url-pattern>*.do</url-pattern> <!-- uri .do로 끝날때 패턴 적용 -->
+  </servlet-mapping>
+</web-app>
