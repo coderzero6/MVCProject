@@ -35,7 +35,7 @@ public class FrontController extends HttpServlet {
 		
 		//command 프로퍼티 파일 읽어 들이기
 		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream("C:\\jspproject\\MVCProject\\src\\com\\controller\\action\\command.properties");
+		FileInputStream fis = new FileInputStream("C:\\Users\\Administrator\\git\\MVCProject\\MVCProject\\src\\com\\controller\\action\\command.properties");
 		prop.load(fis);
 		fis.close();
 		String value = prop.getProperty(command).trim(); //trim 공백제거

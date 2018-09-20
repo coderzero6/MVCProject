@@ -12,7 +12,7 @@ public class AdminLoginAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
-		forward.setPath("./admin/admin_login.jsp");
+		forward.setPath("./admin/admin_index.jsp");
 		
 		return forward;
 	}

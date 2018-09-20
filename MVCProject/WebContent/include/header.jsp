@@ -6,6 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>메인화면</title>
 <!-- css파일 읽어들이기 -->
+<link rel="stylesheet" type="text/css" href="./css/main.css"/>
+<link rel="stylesheet" type="text/css" href="./css/admin.css">
 
 <!-- jQuery 자바스크립트 읽어들이기 -->
 
