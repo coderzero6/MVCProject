@@ -11,7 +11,7 @@
 <body>
 	<div id="site">
 	  <h3 align="center">사용자 단 페이지 영역</h3>
-	</div>
+	</div><!-- site 끝 -->
 	<div id="main_wrap">
 	  <!-- 상단 header -->
 	  <div id="header">

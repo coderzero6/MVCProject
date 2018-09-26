@@ -25,6 +25,7 @@ public class AdminLoginOKAction implements Action {
 		
 		AdminDAO dao = AdminDAO.getInstance();
 		int re = dao.adminCheck(admin_id, admin_pwd);
+		System.out.println("result="+re);
 		if(re==1) { // id/pwd 일치
 			session.setAttribute("admin_id", admin_id);
 			//view page 포워딩
@@ -34,7 +35,7 @@ public class AdminLoginOKAction implements Action {
 			return forward;
 		}else if(re==-1) {
 			out.println("<script>");
-			out.println("alert('등로되지 않은 관리자 입니다.');");
+			out.println("alert('등록되지 않은 관리자 입니다.');");
 			out.println("history.back();");
 			out.println("</script>");
 		}else if(re==0) {

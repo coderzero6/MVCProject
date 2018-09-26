@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.eclipse.jdt.internal.compiler.lookup.PolymorphicMethodBinding;
+
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -35,7 +37,13 @@ public class FrontController extends HttpServlet {
 		
 		//command 프로퍼티 파일 읽어 들이기
 		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream("C:\\Users\\Administrator\\git\\MVCProject\\MVCProject\\src\\com\\controller\\action\\command.properties");
+		
+		//request.getRealPath("/")는 deprecated 되었다 -> request.getSession().getServletContext().getRealPath("/")
+		FileInputStream fis = new FileInputStream(request.getRealPath("/")+"WEB-INF\\command.properties");
+		
+		System.out.println(request.getSession().getServletContext().getRealPath("/"));
+		
+		
 		prop.load(fis);
 		fis.close();
 		String value = prop.getProperty(command).trim(); //trim 공백제거
