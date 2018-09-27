@@ -38,11 +38,9 @@ public class FrontController extends HttpServlet {
 		//command 프로퍼티 파일 읽어 들이기
 		Properties prop = new Properties();
 		
-		//request.getRealPath("/")는 deprecated 되었다 -> request.getSession().getServletContext().getRealPath("/")
-		FileInputStream fis = new FileInputStream(request.getRealPath("/")+"WEB-INF\\command.properties");
-		
-		System.out.println(request.getSession().getServletContext().getRealPath("/"));
-		
+		String propPath = request.getSession().getServletContext().getRealPath("/") //webapp까지의 경로얻기 
+						  + "WEB-INF/command.properties";
+		FileInputStream fis = new FileInputStream(propPath);
 		
 		prop.load(fis);
 		fis.close();
